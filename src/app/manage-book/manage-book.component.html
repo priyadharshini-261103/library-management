@@ -1,0 +1,28 @@
+<div class="container" *ngIf="bookDetails">
+    <h1>Edit Book</h1>
+    <form (ngSubmit)="updateBook()">
+      <div>
+        <label for="title">Title:</label>
+        <input id="title" [(ngModel)]="bookDetails.title" name="title" required>
+      </div>
+      <div>
+        <label for="author">Author:</label>
+        <input id="author" [(ngModel)]="bookDetails.author" name="author" required>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="bookDetails.description" name="description" required></textarea>
+      </div>
+      <div>
+        <label for="cover_image">Cover Image URL:</label>
+        <input id="cover_image" [(ngModel)]="bookDetails.cover_image" name="cover_image" required>
+      </div>
+      <div>
+        <label for="category">Category:</label>
+        <input id="category" [(ngModel)]="bookDetails.category" name="category" required>
+      </div>
+      <button type="submit">Update Book</button>
+    </form>
+  </div>
+       
+  

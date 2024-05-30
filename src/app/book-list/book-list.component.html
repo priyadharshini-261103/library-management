@@ -1,0 +1,7 @@
+<!-- src/app/book-list/book-list.component.html -->
+<div *ngFor="let book of books" (click)="viewBookDetails(book.id)">
+  <mat-card>
+    <mat-card-title>{{ book.title }}</mat-card-title>
+    <mat-card-content>{{ book.description }}</mat-card-content>
+  </mat-card>
+</div>

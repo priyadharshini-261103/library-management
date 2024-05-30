@@ -1,0 +1,34 @@
+<!-- add-book.component.html -->
+
+<h2>Add New Book</h2>
+<form (ngSubmit)="addBook()" class="form-container">
+  <div>
+    <label for="id" class="form-label">ID:</label>
+    <input type="number" id="id" [(ngModel)]="book.id" name="id" class="form-input" required>
+  </div>
+  <div>
+    <label for="title" class="form-label">Title:</label>
+    <input type="text" id="title" [(ngModel)]="book.title" name="title" class="form-input" required>
+  </div>
+  <div>
+    <label for="author" class="form-label">Author:</label>
+    <input type="text" id="author" [(ngModel)]="book.author" name="author" class="form-input" required>
+  </div>
+  <div>
+    <label for="description" class="form-label">Description:</label>
+    <textarea id="description" [(ngModel)]="book.description" name="description" class="form-input" required></textarea>
+  </div>
+  <div>
+    <label for="cover_image" class="form-label">Cover Image URL:</label>
+    <input type="text" id="cover_image" [(ngModel)]="book.cover_image" name="cover_image" class="form-input" required>
+  </div>
+  <div>
+    <label for="category" class="form-label">Category:</label>
+    <input type="text" id="category" [(ngModel)]="book.category" name="category" class="form-input" required>
+  </div>
+  <div>
+    <label for="pdf_url" class="form-label">PDF URL:</label>
+    <input type="text" id="pdf_url" [(ngModel)]="book.pdf_url" name="pdf_url" class="form-input" required>
+  </div>
+  <button type="submit" class="submit-button">Add Book</button>
+</form>

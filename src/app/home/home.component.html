@@ -1,0 +1,30 @@
+<ng-container *ngIf="searchResults.length > 0; else displayDefault">
+  <div class="container">
+    <h2>Search Results</h2>
+    <div class="scroll-container">
+      <div class="book-list">
+        <div class="book" *ngFor="let book of searchResults" (click)="navigateToBookDetails(book.id)">
+          <img [src]="book.cover_image" alt="{{ book.title }}">
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.author }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #displayDefault>
+  <div class="container" *ngFor="let category of getCategories()">
+    <h2>{{ category }}</h2>
+    <div class="scroll-container">
+      <button class="scroll-button left" (click)="scrollLeft(category)">&#8249;</button>
+      <div class="book-list" id="{{ 'book-list-' + category }}">
+        <div class="book" *ngFor="let book of categorizedBooks[category]" (click)="navigateToBookDetails(book.id)">
+          <img [src]="book.cover_image" alt="{{ book.title }}">
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.author }}</p>
+        </div>
+      </div>
+      <button class="scroll-button right" (click)="scrollRight(category)">&#8250;</button>
+    </div>
+  </div>
+</ng-template>

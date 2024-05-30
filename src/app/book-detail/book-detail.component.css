@@ -1,0 +1,76 @@
+/* Global Styles */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Loading Message */
+  .loading {
+    font-size: 18px;
+    text-align: center;
+    color: #888;
+  }
+  
+  /* Book Details */
+  .book-details {
+    text-align: center;
+  }
+  
+  .book-details h1 {
+    font-size: 2.5em;
+    color: #4a90e2;
+    margin-bottom: 10px;
+  }
+  
+  .book-details h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .book-details p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+  }
+  
+  /* Iframe */
+  .book-details iframe {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+    
+    .book-details h1 {
+      font-size: 2em;
+    }
+    
+    .book-details h2 {
+      font-size: 1.2em;
+    }
+    
+    .book-details p {
+      font-size: 1em;
+    }
+  }
+  

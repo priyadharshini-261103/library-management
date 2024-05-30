@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="toggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="/assets/this.png" alt="icon" class="logo" (click)="navigateToHome()">
+    <div class="spacer"></div>
+    <div class="search-container">
+      <mat-form-field class="filter-dropdown">
+        <mat-label>Filter By</mat-label>
+        <mat-select [(ngModel)]="selectedFilter" (selectionChange)="updatePlaceholder()">
+          <mat-option *ngFor="let filter of filters" [value]="filter">
+            {{ filter }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="search-container">
+        <mat-form-field class="search-field">
+          <input matInput placeholder="{{ searchQuery }}" [(ngModel)]="searchQuery" class="search-input">
+        </mat-form-field>
+         <!-- Navbar Component Template -->
+<button mat-raised-button color="accent" class="search-button" (click)="search()">Search</button>
+
+        
+      </div>
+    </div>
+    <button mat-button routerLink="/book-details" class="my-book-link bookdetails">My Journey</button>
+    <ng-container *ngIf="isAuthenticated(); else loginLink">
+      <div class="dropdown" (click)="toggleDropdown()">
+        <button mat-button class="accname">👤 Hi, {{ fullName }}</button>
+        <div class="dropdown-content" *ngIf="isDropdownOpen">
+          <button mat-button (click)="logout()">Log Out</button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #loginLink>
+      <button mat-button routerLink="/login" class="login">Login</button>
+    </ng-template>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+
+
+
+

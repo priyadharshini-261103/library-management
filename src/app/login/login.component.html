@@ -1,0 +1,66 @@
+<div class="login-container">
+  <div class="login-type-options">
+    <button (click)="selectLoginType('user')" [class.active]="selectedLoginType === 'user'">User</button>
+    <button (click)="selectLoginType('admin')" [class.active]="selectedLoginType === 'admin'">Admin</button>
+  </div>
+
+  <div *ngIf="selectedLoginType === 'user' && !showSignUpForm">
+    <table>
+      <tr>
+        <td>Username:</td>
+        <td><input type="text" id="username" [(ngModel)]="userLoginData.username" /></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" id="password" [(ngModel)]="userLoginData.password" /></td>
+      </tr>
+    </table>
+    <button (click)="userLogin()">Login</button>
+    <p>Don't have an account? <a href="#" (click)="showSignUp($event)">Sign Up</a></p>
+  </div>
+
+  <div *ngIf="selectedLoginType === 'admin'">
+    <table>
+      <tr>
+        <td>Admin Username:</td>
+        <td><input type="text" id="adminUsername" [(ngModel)]="adminLoginData.adminUsername" /></td>
+      </tr>
+      <tr>
+        <td>Admin Password:</td>
+        <td><input type="password" id="adminPassword" [(ngModel)]="adminLoginData.adminPassword" /></td>
+      </tr>
+    </table>
+    <button (click)="adminLogin()">Login</button>
+  </div>
+
+  <div *ngIf="showSignUpForm && selectedLoginType === 'user'">
+    <table>
+      <tr>
+        <td>Full Name:</td>
+        <td><input type="text" id="fullName" [(ngModel)]="userSignUpData.fullName" /></td>
+      </tr>
+      <tr>
+        <td>Date of Birth:</td>
+        <td><input type="date" id="dateOfBirth" [(ngModel)]="userSignUpData.dateOfBirth" /></td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td><textarea id="address" [(ngModel)]="userSignUpData.address"></textarea></td>
+      </tr>
+      <tr>
+        <td>Phone Number:</td>
+        <td><input type="text" id="phoneNumber" [(ngModel)]="userSignUpData.phoneNumber" /></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="email" id="email" [(ngModel)]="userSignUpData.email" /></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" id="password" [(ngModel)]="userSignUpData.password" /></td>
+      </tr>
+    </table>
+    <button (click)="userSignUp()">Sign Up</button>
+    <p>Already have an account? <a href="#" (click)="showLogin($event)">Login</a></p>
+  </div>
+</div>

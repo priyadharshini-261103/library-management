@@ -1,0 +1,16 @@
+<div>
+  <input type="text" placeholder="Title" [(ngModel)]="title">
+  <input type="text" placeholder="Author" [(ngModel)]="author">
+  <input type="text" placeholder="Category" [(ngModel)]="category">
+  <input type="text" placeholder="Subject" [(ngModel)]="subject">
+  <input type="text" placeholder="Search Query" [(ngModel)]="searchQuery">
+  <button (click)="searchBooks()">Search</button>
+</div>
+
+<div *ngIf="searchResults.length > 0">
+  <ul>
+    <li *ngFor="let book of searchResults">
+      {{ book.title }} by {{ book.author }} ({{ book.category }})
+    </li>
+  </ul>
+</div>

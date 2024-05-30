@@ -1,0 +1,16 @@
+<div class="container" *ngIf="bookDetails">
+  <div class="book-details">
+    <h1>{{ bookDetails.title }}</h1>
+    <h2>by {{ bookDetails.author }}</h2>
+    <p>{{ bookDetails.description }}</p>
+    <iframe [src]="sanitizeUrl(bookDetails.pdf_url)" frameborder="0" width="100%" height="600"></iframe>
+
+    <div *ngIf="isAdmin">
+      <button (click)="editBook()">Edit</button>
+      <button (click)="deleteBook()">Delete</button>
+    </div>
+  </div>
+</div>
+<div class="container loading" *ngIf="!bookDetails">
+  <p>Loading book details...</p>
+</div>

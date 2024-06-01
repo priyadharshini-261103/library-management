@@ -18,7 +18,7 @@ export class BookListComponent implements OnInit {
   }
 
   loadBooks(): void {
-    this.http.get<any[]>('http://localhost:3000/books').subscribe(
+    this.http.get<any[]>('https://library-backend-xsed.onrender.com/books').subscribe(
       data => {
         this.books = data;
       },

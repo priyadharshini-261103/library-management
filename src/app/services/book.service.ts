@@ -7,8 +7,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class BookService {
-  private apiUrl = 'http://localhost:3000/api/books';
-  private baseUrl = 'http://localhost:3000/api/book-details'; 
+  private apiUrl = 'https://library-backend-xsed.onrender.com/api/books';
+  private baseUrl = 'https://library-backend-xsed.onrender.com/api/book-details'; 
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<any> {

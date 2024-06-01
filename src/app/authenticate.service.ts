@@ -7,9 +7,9 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthenticateService {
-  private loginUrl = 'http://localhost:3000/api/login';
-  private signupUrl = 'http://localhost:3000/api/signup';
-  private adminLoginUrl = 'http://localhost:3000/api/admin/login';
+  private loginUrl = 'https://library-backend-xsed.onrender.com/api/login';
+  private signupUrl = 'https://library-backend-xsed.onrender.com/api/signup';
+  private adminLoginUrl = 'https://library-backend-xsed.onrender.com/api/admin/login';
   private loggedIn = false;
   private userRole = ''; 
   private fullName = '';
